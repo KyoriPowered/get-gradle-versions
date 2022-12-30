@@ -14,7 +14,7 @@ This is an expansion of some existing logic to automatically test Gradle plugins
 | NAME          | DESCRIPTION                                                    | TYPE      | REQUIRED | DEFAULT  |
 |---------------|----------------------------------------------------------------|-----------|----------|----------|
 | `debug`       | Whether to enable extra debug logging                          | `boolean` | `false`  | `false`  |
-| `override`    | A version ID to override the computed latest version           | `string`  | `false`  | `N/A`    |
+| `override`    | A version ID to override the computed latest version           | `string`  | `false`  | *(none)* |
 | `output_file` | File to output extra Gradle version to, in mammoth-test format | `string`  | `false`  | *(none)* |
 
 ## Outputs
@@ -50,33 +50,33 @@ Simply create a release based on a tag with the format vMAJOR.MINOR.PATCH (all 3
 
 Copyright 2022 KyoriPowered <https://kyori.net>
 
-Get Gradle Version is released under the [GNU Lesser General Public License version 3.0](./COPYING.LESSER).
+Get Gradle Versions is released under the [GNU Lesser General Public License version 3.0](./COPYING.LESSER).
 
 ```
 Copyright (c) 2022 KyoriPowered and contributors
-This file is part of get-gradle-version.
+This file is part of get-gradle-versions.
 
-get-gradle-version is free software: you can redistribute it and/or modify
+get-gradle-versions is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-get-gradle-version is distributed in the hope that it will be useful,
+get-gradle-versions is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with get-gradle-version.  If not, see <https://www.gnu.org/licenses/>.
+along with get-gradle-versions.  If not, see <https://www.gnu.org/licenses/>.
 ```
 
 <!-- badge links -->
 
-[actions-workflow-test]: https://github.com/KyoriPowered/get-gradle-version/actions?query=workflow%3ATest
-[actions-workflow-test-badge]: https://img.shields.io/github/workflow/status/KyoriPowered/get-gradle-version/Test?label=Test&style=for-the-badge&logo=github
+[actions-workflow-test]: https://github.com/KyoriPowered/get-gradle-versions/actions?query=workflow%3ATest
+[actions-workflow-test-badge]: https://img.shields.io/github/actions/workflow/status/KyoriPowered/get-gradle-versions/test.yml?label=Test&branch=trunk&style=flat&logo=github
 
-[release]: https://github.com/KyoriPowered/get-gradle-version/releases
-[release-badge]: https://img.shields.io/github/v/release/KyoriPowered/get-gradle-version?style=for-the-badge&logo=github
+[release]: https://github.com/KyoriPowered/get-gradle-versions/releases
+[release-badge]: https://img.shields.io/github/v/release/KyoriPowered/get-gradle-versions?style=flat&logo=github
 
 [license]: COPYING.LESSER
-[license-badge]: https://img.shields.io/github/license/KyoriPowered/get-gradle-version?style=for-the-badge
+[license-badge]: https://img.shields.io/github/license/KyoriPowered/get-gradle-versions?style=flat

@@ -1,4 +1,4 @@
-name: Get Gradle Version
+name: Get Gradle Versions
 description: Get the latest Gradle versions
 author: KyoriPowered
 inputs:
