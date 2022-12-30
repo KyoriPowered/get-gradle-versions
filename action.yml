@@ -4,9 +4,11 @@ author: KyoriPowered
 inputs:
   debug:
     description: A boolean, to enable debug logging
+    default: 'false'
     required: false
   override:
     description: A version override to inject as 'latest', for use with manually called workflows
+    default: '-'
     required: false
   output_file:
     description: A file to write the latest version to
