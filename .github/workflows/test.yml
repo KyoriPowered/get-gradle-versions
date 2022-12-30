@@ -1,0 +1,53 @@
+name: Test
+
+on: push
+
+env:
+  NODE_VERSION: "16.x"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+      - run: yarn install --immutable
+      - run: yarn test
+      - run: yarn format-check
+      - run: yarn lint
+
+  functional-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: "Test API calls"
+      uses: ./
+      id: test-run
+      with:
+        debug: true
+        output_file: './test-out.txt'
+    - name: "Validate output"
+      env:
+        LATEST: "${{ steps.test-run.outputs.latest_rc_or_nightly }}"
+        RELEASE: "${{ steps.test-run.outputs.release }}"
+        RC: "${{ steps.test-run.outputs.rc }}"
+        NIGHTLY: "${{ steps.test-run.outputs.nightly }}"
+        RELEASE_NIGHTLY: "${{ steps.test-run.outputs.release_nightly }}"
+      run: |
+        echo "::notice:: Latest: $LATEST"
+        echo "::notice:: Release: $RELEASE"
+        echo "::notice:: RC: $RC"
+        echo "::notice:: Nightly: $NIGHTLY"
+        echo "::notice:: Release Nightly: $RELEASE_NIGHTLY"
+
+        touch test-out.txt # just in case
+
+        echo "## Release info file" >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
+        cat test-out.txt >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY

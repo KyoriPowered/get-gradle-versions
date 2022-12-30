@@ -1,0 +1,30 @@
+name: Get Gradle Version
+description: Get the latest Gradle versions
+author: KyoriPowered
+inputs:
+  debug:
+    description: A boolean, to enable debug logging
+    required: false
+  override:
+    description: A version override to inject as 'latest', for use with manually called workflows
+    required: false
+  output_file:
+    description: A file to write the latest version to
+    required: false
+outputs:
+  latest_rc_or_nightly:
+    description: The latest RC (if present) or nightly (otherwise), can be overridden
+  release_nightly:
+    description: The latest release-nightly, or blank if none is published
+  nightly:
+    description: The latest nightly, or blank if none is published
+  rc:
+    description: The latest RC, or blank if none is published
+  release:
+    description: The latest release, or blank if none is published
+runs:
+  using: node16
+  main: dist/index.js
+branding:
+  icon: external-link
+  color: green
