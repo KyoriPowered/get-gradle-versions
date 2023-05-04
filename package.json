@@ -21,7 +21,7 @@
   ],
   "author": "KyoriPowered",
   "license": "GNU Lesser General Public License, version 3.0",
-  "packageManager": "yarn@3.5.0",
+  "packageManager": "yarn@3.5.1",
   "devDependencies": {
     "@types/eslint": "^8",
     "@types/jest": "^29.2.4",
