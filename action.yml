@@ -25,7 +25,7 @@ outputs:
   release:
     description: The latest release, or blank if none is published
 runs:
-  using: node16
+  using: node20
   main: dist/index.js
 branding:
   icon: external-link
