@@ -3564,12 +3564,12 @@ function debug(arg, ...templates) {
     }
 }
 async function writeLatestToFile(latest, targetFile) {
-    debug `Discovered latest Gradle version ${latest}`;
+    debug(`Discovered latest Gradle version ${latest}`);
     // Then persist the found version
     core.setOutput(OUTPUT_LATEST_NON_RELEASE, latest);
     if (targetFile) {
         const targetDir = path.dirname(targetFile);
-        debug `Creating directory ${targetDir}`;
+        debug(`Creating directory ${targetDir}`);
         fs.mkdirSync(targetDir, { recursive: true });
         fs.writeFileSync(targetFile, latest + '\n' + latest + ':--configuration-cache\n');
     }
@@ -3579,7 +3579,7 @@ async function run() {
         let target = null;
         const override = core.getInput('override');
         if (override && override != '-') {
-            debug `Declared override: ${override}`;
+            debug(`Declared override: ${override}`);
             target = override;
         }
         const versionPromises = {};
