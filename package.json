@@ -24,7 +24,7 @@
   "packageManager": "yarn@4.9.4",
   "devDependencies": {
     "@eslint/js": "^9.34.0",
-    "@types/eslint": "^8.44.8",
+    "@types/eslint": "^9.0.0",
     "@types/jest": "^30.0.0",
     "@types/node": "20.19.11",
     "@vercel/ncc": "^0.38.1",
