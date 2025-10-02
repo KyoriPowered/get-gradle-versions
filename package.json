@@ -21,7 +21,7 @@
   ],
   "author": "KyoriPowered",
   "license": "GNU Lesser General Public License, version 3.0",
-  "packageManager": "yarn@4.9.4",
+  "packageManager": "yarn@4.10.3",
   "devDependencies": {
     "@eslint/js": "^9.34.0",
     "@types/eslint": "^9.0.0",
